@@ -1,3 +1,4 @@
+import "./logger";
 import { Agent, TournamentReport } from "./structure";
 import { AgentScore } from "./structure";
 

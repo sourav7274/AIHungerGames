@@ -1,3 +1,4 @@
+import "./logger";
 import { generateAgent } from "./agent";
 import { buildVotePrompt, buildPrompt, buildDecideVoteTypePrompt } from "./prompt";
 import { askOllama } from "./ollama";

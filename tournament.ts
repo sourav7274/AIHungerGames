@@ -1,3 +1,4 @@
+import "./logger";
 import { runDebate } from "./debate";
 import { TournamentReport, Agent, AgentScore } from "./structure";
 import { generateAgent } from "./agent";

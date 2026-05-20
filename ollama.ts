@@ -1,3 +1,4 @@
+import "./logger";
 import ollama from "ollama";
 
 export async function askOllama(prompt: string) {

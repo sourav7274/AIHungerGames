@@ -1,3 +1,4 @@
+import "./logger";
 import { Agent } from "./structure";
 import { Traits } from "./structure";
 import {buildPrompt} from "./prompt";

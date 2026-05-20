@@ -1,3 +1,4 @@
+import "./logger";
 import { generateAgent } from "./agent";
 import { Agent } from "./structure";
 import { Traits } from "./structure";

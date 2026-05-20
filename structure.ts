@@ -1,3 +1,5 @@
+import "./logger";
+
 export type Traits = {
     aggression:number,
     logic:number,

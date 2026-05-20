@@ -1,3 +1,4 @@
+import "./logger";
 import { Agent,AgentScore } from "./structure"
 
 let TournamentState = {
