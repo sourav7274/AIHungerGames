@@ -1,6 +1,6 @@
 import "./logger";
 import { buildVotePrompt, buildPrompt, buildDecideVoteTypePrompt } from "./prompt";
-import { askOllama } from "./ollama";
+import { askOllama, streamOllama } from "./ollama";
 import { Agent, AgentScore } from "./structure";
 import {
   applyVote,
@@ -320,7 +320,21 @@ export async function runDebate(
     }
 
     let prompt = buildPrompt(agent, topic, context);
-    let ollamaResponse = await askOllama(prompt);
+    if (onEvent) {
+      onEvent({
+        type: "AGENT_SPEECH_START",
+        agentId: agent.id,
+        agentName: agent.name,
+      });
+    }
+    let ollamaResponse = await streamOllama(prompt, (chunk) => {
+      onEvent?.({
+        type: "AGENT_SPEECH_CHUNK",
+        agentId: agent.id,
+        agentName: agent.name,
+        text: chunk,
+      });
+    });
     ollamaResponse = ollamaResponse.replace("That's all from my side.", "").trim();
     context.push(`${agent.id}: ${ollamaResponse}`);
     awardSpeakingPoints(scores, agent.id);
