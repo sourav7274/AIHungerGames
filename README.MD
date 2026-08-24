@@ -43,8 +43,9 @@ Second pass
   → Agent[1] casts their remaining vote type
 Scores updated
   → Speaking: +1 per agent
-  → Positive vote received: +2
+  → Positive vote received: +1
   → Negative vote received: -1
+  → For and against have equal weight; speak order is shuffled each round
 ```
 
 ---

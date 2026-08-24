@@ -13,7 +13,7 @@ export type Agent= {
     traits:Traits,
     style:string,
     bias:string,
-    roundsPlayed:Number
+    roundsPlayed?:number
 }
 
 export interface AgentScore {
